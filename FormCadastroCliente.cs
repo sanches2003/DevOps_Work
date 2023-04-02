@@ -42,32 +42,34 @@ namespace SalesProject
             this.txtEstadoCivil.Enabled = habilita;
             this.txtSexo.Enabled = habilita;
         }
+        
+//caso queira desativar os botões principais, substituia true por false e vice versa; dessa forma:
 
         private void controlarBotoes(OperadorEnum acao)
         {
-            btnCancelar.Enabled = false;
-            btnDeletar.Enabled = false;
-            btnNovo.Enabled = false;
-            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnDeletar.Enabled = true;
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = true;
 
             if (acao == OperadorEnum.alterar)
             {
-                btnCancelar.Enabled = true;
-                btnDeletar.Enabled = true;
-                btnSalvar.Enabled = true;
+                btnCancelar.Enabled = false;
+                btnDeletar.Enabled = false;
+                btnSalvar.Enabled = false;
             }
             else
             {
                 if (acao == OperadorEnum.inserir)
                 {
-                    btnCancelar.Enabled = true;
-                    btnSalvar.Enabled = true;
+                    btnCancelar.Enabled = false;
+                    btnSalvar.Enabled = false;
                 }
                 else
                 {
                     if (acao == OperadorEnum.inicial)
                     {
-                        btnNovo.Enabled = true;
+                        btnNovo.Enabled = false;
                     }
                 }
             }
