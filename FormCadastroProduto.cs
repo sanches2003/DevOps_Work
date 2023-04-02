@@ -192,9 +192,10 @@ namespace SalesProject.Cadastro
             var repositorio = new TipoProdutoRepositorio();
 
             var listatiposprodutos = repositorio.listarTodos();
-
+            
+// caso queira que na sua combo box, ela deixe de exibir "NomeTipoProduto" para exibir a "Descricao", altere assim:
             CbTipoProduto.DataSource = listatiposprodutos;
-            CbTipoProduto.DisplayMember = "NomeTipoProduto";
+            CbTipoProduto.DisplayMember = "DescricaoTipoProduto";
             CbTipoProduto.ValueMember = "Id";
         }
 
